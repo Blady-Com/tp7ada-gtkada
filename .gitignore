@@ -1,0 +1,7 @@
+/obj/
+/bin/
+.DS_Store
+*.npp
+/lib/
+/inst/
+/tf/
