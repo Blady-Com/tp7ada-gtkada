@@ -14,7 +14,7 @@ project TP7 is
    end Builder;
 
    package Compiler is
-       for Default_Switches ("ada") use ("-gnatVa", "-gnatwa", "-g", "-gnato", "-fstack-check", "-gnatf", "-gnatW8", "-gnateE");
+       for Default_Switches ("ada") use ("-gnatVa", "-gnatw.eH.YD", "-g", "-gnato", "-fstack-check", "-gnatf", "-gnatW8", "-gnateE");
    end Compiler;
 
    package Binder is
