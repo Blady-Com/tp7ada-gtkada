@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 -- NOM DU CSU (corps)               : tp7.adb
 -- AUTEUR DU CSU                    : Pascal Pignard
--- VERSION DU CSU                   : 3.3a
--- DATE DE LA DERNIERE MISE A JOUR  : 4 septembre 2016
+-- VERSION DU CSU                   : 3.4a
+-- DATE DE LA DERNIERE MISE A JOUR  : 3 juillet 2021
 -- ROLE DU CSU                      : Unité d'émulation Turbo Pascal 7.0.
 --
 --
@@ -11,9 +11,9 @@
 -- FONCTIONS LOCALES DU CSU         :
 --
 --
--- NOTES                            : Ada 2005, GTKAda GPL 2016, AICWL 3.15
+-- NOTES                            : Ada 2005, GTKAda CE 2021, AICWL 3.24
 --
--- COPYRIGHT                        : (c) Pascal Pignard 2002-2016
+-- COPYRIGHT                        : (c) Pascal Pignard 2002-2021
 -- LICENCE                          : CeCILL V2 (http://www.cecill.info)
 -- CONTACT                          : http://blady.pagesperso-orange.fr
 -------------------------------------------------------------------------------
@@ -41,8 +41,8 @@ with Gdk.Threads;
 with Gdk.Types;
 with Gdk.Event;
 with Gtkada.Dialogs;
+with Gtkada.Types;
 with Glib;
-with Interfaces.C.Strings;
 with Gtk.Main.Router;
 
 package body TP7 is
@@ -315,16 +315,16 @@ package body TP7 is
       pragma Unreferenced (Object);
       function Get_String (Event : Gdk.Event.Gdk_Event) return String is
          Event_Type : constant Gdk.Event.Gdk_Event_Type := Gdk.Event.Get_Event_Type (Event);
-         use type Gdk.Event.Gdk_Event_Type, Interfaces.C.Strings.chars_ptr;
+         use type Gdk.Event.Gdk_Event_Type, Gtkada.Types.Chars_Ptr;
       begin
          if Event_Type = Gdk.Event.Key_Press or else Event_Type = Gdk.Event.Key_Release then
             declare
-               Str : constant Interfaces.C.Strings.chars_ptr := Event.Key.String;
+               Str : constant Gtkada.Types.Chars_Ptr := Event.Key.String;
             begin
-               if Str = Interfaces.C.Strings.Null_Ptr then
+               if Str = Gtkada.Types.Null_Ptr then
                   return "";
                end if;
-               return Interfaces.C.Strings.Value (Str);
+               return Gtkada.Types.Value (Str);
             end;
          end if;
          raise Constraint_Error;

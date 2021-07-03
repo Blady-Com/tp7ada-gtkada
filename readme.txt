@@ -18,14 +18,14 @@ In the package you will find some test examples.
 
 II How to use this package
 
-   GNAT GPL 2017 compiler (with Ada 2005) and XNAdalib-2017 library must be installed before,
+   GNAT CE 2021 compiler (with Ada 2005) and XNAdalib-CE-2021 library must be installed before,
 see on Blady web site.
    Your Ada program translated from Turbo Pascal (P2Ada is recommended)
 must be referenced in main.adb source with TP7.Init subprogram.
    Executable is built and run with following instructions for example:
 
-$ gnatmake -gnatW8 main `gtkada-config`
-$ ./main
+$ gprbuild -P examples/examples.gpr
+$ ./bin/main
 
   The program is composed of a control window: start and stop execution
 of your program with a Debug option, a text window if TP7.CRT is used,
@@ -42,6 +42,6 @@ see Licence_CeCILL_V2-en.txt.
 
 Pascal Pignard,
 December 1998, June 1994, October 2002, September-December 2011, January-November 2012,
-January 2014, June 2014, December 2015, September 2016, January 2018.
+January 2014, June 2014, December 2015, September 2016, January 2018, juillet 2021.
 http://blady.pagesperso-orange.fr
 

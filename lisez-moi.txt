@@ -127,10 +127,10 @@ renvoient un message d'avertissement si Debug est activé.
 
      III Mise en oeuvre des unités TP7Ada :
 
-     Au préalable, le compilateur GNAT GPL 2017 (avec Ada 2005) et la bibliothèque XNAdaLib-2017
+     Au préalable, le compilateur GNAT CE 2021 (avec Ada 2005) et la bibliothèque XNAdaLib-CE-2021
 doivent être installés, voir par ailleurs sur Blady.
 
-	Les sources (UTF-8) de la bibliothèque version 3.3a sont :
+	Les sources (UTF-8) de la bibliothèque version 3.4a sont :
 	read-me.txt
 	lisez-moi.txt
 Répertoire examples :
@@ -161,7 +161,7 @@ Répertoire src :
 	tp7-system.ads		2.3a
 	tp7-test.adb		1.2a
 	tp7-test.ads		1.0a
-	tp7.adb				3.3a
+	tp7.adb				3.4a
 	tp7.ads				3.3a
 	tp7.gpr
 
@@ -171,8 +171,8 @@ avec la procédure TP7.Init.
      La création et le lancement de l'exécutable est fait par exemple avec
 les commandes :
 
-$ gnatmake -gnatW8 main `gtkada-config`
-$ ./main
+$ gprbuild -P examples/examples.gpr
+$ ./bin/main
 
      La bibliothèque contient un programme principal par défaut
 utilisé pour le test des unités : TP7.Test.Execute, voir main.adb et
@@ -210,6 +210,7 @@ programmes graphiques sur Macintosh, Unix ou Windows.
 
      VII Historique :
 
+- 3.4a : Adaptation à GTKAda CE 2021 et XNAdaLib-CE-2021:
 - 3.3a : Adaptation à GTKAda GPL 2016 et XNAdaLib-2016:
 		- tp7-graph.adb : ajout de Gtk.Style_Context.Render_Background dans l'affichage de la zone graphique,
 		- tp7.ads et adb : ajout de Restore_GPS_Startup_Values pour Init, de Main_Loop et remplacement
@@ -273,6 +274,6 @@ programmes graphiques sur Macintosh, Unix ou Windows.
 
 Pascal Pignard,
 décembre 1988, juin 1994, octobre 2002, septembre-décembre 2011, janvier-novembre 2012,
-janvier 2014, juin 2014, décembre 2015, septembre 2016, janvier 2018.
+janvier 2014, juin 2014, décembre 2015, septembre 2016, janvier 2018, juillet 2021.
 http://blady.pagesperso-orange.fr
 
